@@ -234,7 +234,7 @@
     <div class="card-wrapper">
         <div class="form-section">
 
-            <form method="POST" action="{{ route('subjects.store') }}">
+            <form method="POST" action="{{ route('subjects.store') }}" autocomplete="on">
                 @csrf
                 <div class="form-group">
                     <label class="form-label">Subject Name <span style="color: var(--danger-color);">*</span></label>
@@ -245,7 +245,8 @@
                         placeholder="Enter Subject Name"
                         value="{{ old('subject_name') }}"
                         required
-                        autofocus>
+                        autofocus
+                        autocomplete="name">
                     @error('subject_name')
                     <small style="color: var(--danger-color); margin-top: 6px; display: block;">
                         <i class="bi bi-exclamation-circle"></i> {{ $message }}
